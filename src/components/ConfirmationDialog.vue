@@ -114,5 +114,9 @@ const handleOk = () => {
   emits('ok', inputText)
 }
 
-watch(isDialogOpen, () => inputText.value = '')
+watch(isDialogOpen, val => {
+  if (val) {
+    inputText.value = ''
+  }
+})
 </script>
